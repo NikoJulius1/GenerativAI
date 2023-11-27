@@ -28,13 +28,18 @@ button.addEventListener("click", () => {
         });
 });*/
 
-const button = document.querySelector('button');
+const button = document.querySelector('#fortuneButton');
 const input = document.querySelector('input');
-const pTag = document.querySelector('p');
+const pTag = document.querySelector('.suggestions');
+const loading = document.querySelector(".loading");
+
 button.addEventListener("click", () => {
-    getGeneratedText(`The following is a list of 10 dishes you can make with these ingredients: ${input.value}`)
+    loading.style.display = "block";
+
+    getGeneratedText(`Predict a dark and random future based on following user information: ${input.value}!`)
         .then(generatedText => {
-            pTag.innerText = generatedText;
+            pTag.innerText = generatedText.split('!')[1];
+            loading.style.display = "none";
         });
 });
 

@@ -1,4 +1,4 @@
-const HUGGINGFACE_TOKEN = "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";
+const HUGGINGFACE_TOKEN = "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";
 
 async function getGeneratedText(query) {
     // We can call this function 8 times before we respond
